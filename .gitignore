@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# source mockups (100MB+)
+/mockups
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -4,52 +4,45 @@ import { services } from "@/lib/services";
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      <section className="glass overflow-hidden rounded-[28px] px-6 py-14 sm:px-12 sm:py-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-          Clinică stomatologică · demo
-        </p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
-          Medicină dentară clară, într-un spațiu vizual calm.
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-          Zece specialități, același limbaj: diagnostic, etape, beneficii și tarife orientative.
-          Navighează din dock-ul de sticlă de jos — câte trei servicii pe ecran.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/servicii/fast-fixed"
-            className="rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white"
-          >
-            Fast & Fixed în 24h
-          </Link>
-          <Link
-            href="#servicii"
-            className="rounded-full bg-white/70 px-5 py-3 text-sm font-medium text-slate-800"
-          >
-            Toate serviciile
-          </Link>
+      <section className="grid items-center gap-8 py-10 lg:grid-cols-2 lg:py-16">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2b7de9]">DentalClinic Demo</p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#0f2744] sm:text-5xl">
+            Zece specialități. Un zâmbet, planificat clar.
+          </h1>
+          <p className="mt-4 max-w-xl text-lg leading-8 text-[#5b708b]">
+            Site demonstrativ după formatele de mobil și desktop: Fast & Fixed, implantologie, estetică, ortodonție și restul serviciilor clinicii.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/servicii/fast-fixed"
+              className="rounded-full bg-[#2b7de9] px-5 py-3 text-sm font-medium text-white hover:bg-[#1d64c7]"
+            >
+              Fast & Fixed în 24h
+            </Link>
+            <a href="#servicii" className="rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0f2744] shadow-sm">
+              Toate serviciile
+            </a>
+          </div>
+        </div>
+        <div className="card overflow-hidden rounded-[28px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/heroes/fast-fixed.jpg" alt="Fast & Fixed" className="h-[280px] w-full object-cover sm:h-[360px]" />
         </div>
       </section>
 
-      <section id="servicii" className="scroll-mt-28 py-8">
-        <div className="mb-5 flex items-end justify-between gap-4 px-1">
-          <h2 className="text-2xl font-semibold tracking-tight">Servicii</h2>
-          <p className="hidden text-sm text-slate-500 sm:block">10 specialități · conținut demo</p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <section id="servicii" className="scroll-mt-24 pb-8">
+        <h2 className="text-2xl font-semibold tracking-tight">Servicii</h2>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/servicii/${service.slug}`}
-              className="glass-soft group rounded-[24px] p-5 transition hover:-translate-y-0.5 hover:bg-white/70"
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-                {service.heroKicker}
-              </p>
-              <h3 className="mt-2 text-lg font-semibold tracking-tight group-hover:text-slate-950">
-                {service.title}
-              </h3>
-              <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">{service.tagline}</p>
+            <Link key={service.slug} href={`/servicii/${service.slug}`} className="card overflow-hidden rounded-[24px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={service.heroImage} alt="" className="h-36 w-full object-cover" />
+              <div className="p-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#2b7de9]">{service.kicker}</p>
+                <h3 className="mt-1 font-semibold">{service.title}</h3>
+                <p className="mt-1 line-clamp-2 text-sm text-[#5b708b]">{service.subtitle}</p>
+              </div>
             </Link>
           ))}
         </div>

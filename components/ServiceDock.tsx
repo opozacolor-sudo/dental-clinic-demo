@@ -9,7 +9,6 @@ export function ServiceDock() {
   const pathname = usePathname();
   const [start, setStart] = useState(0);
   const touchX = useRef<number | null>(null);
-
   const visible = [0, 1, 2].map((offset) => services[(start + offset) % services.length]);
 
   const shift = (dir: -1 | 1) => {
@@ -22,16 +21,15 @@ export function ServiceDock() {
         <button
           type="button"
           onClick={() => shift(-1)}
-          className="glass grid h-12 w-10 shrink-0 place-items-center rounded-2xl text-slate-800 sm:w-12"
+          className="dock-glass grid h-12 w-10 shrink-0 place-items-center rounded-2xl text-[#0f2744] sm:w-12"
           aria-label="Servicii anterioare"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
             <path d="M15 6l-6 6 6 6" />
           </svg>
         </button>
-
         <div
-          className="glass min-w-0 flex-1 rounded-3xl px-2 py-2"
+          className="dock-glass min-w-0 flex-1 rounded-3xl px-2 py-2"
           onTouchStart={(e) => {
             touchX.current = e.changedTouches[0].clientX;
           }}
@@ -51,10 +49,8 @@ export function ServiceDock() {
                 <Link
                   key={`${start}-${service.slug}`}
                   href={href}
-                  className={`truncate rounded-2xl px-2 py-3 text-center text-[11px] font-medium leading-tight tracking-tight transition sm:text-xs ${
-                    active
-                      ? "bg-slate-900 text-white shadow-lg"
-                      : "bg-white/45 text-slate-700 hover:bg-white/80"
+                  className={`truncate rounded-2xl px-2 py-3 text-center text-[11px] font-medium leading-tight sm:text-xs ${
+                    active ? "bg-[#2b7de9] text-white shadow" : "bg-white/70 text-[#0f2744] hover:bg-white"
                   }`}
                 >
                   {service.shortName}
@@ -63,11 +59,10 @@ export function ServiceDock() {
             })}
           </div>
         </div>
-
         <button
           type="button"
           onClick={() => shift(1)}
-          className="glass grid h-12 w-10 shrink-0 place-items-center rounded-2xl text-slate-800 sm:w-12"
+          className="dock-glass grid h-12 w-10 shrink-0 place-items-center rounded-2xl text-[#0f2744] sm:w-12"
           aria-label="Servicii următoare"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">

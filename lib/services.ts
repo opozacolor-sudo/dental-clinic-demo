@@ -1,580 +1,580 @@
-export type PricingRow = {
-  name: string;
-  price: string;
-  note?: string;
-};
+export type PriceRow = { name: string; detail?: string; price: string };
+export type Item = { title: string; text: string };
 
 export type Service = {
   slug: string;
   shortName: string;
+  kicker: string;
   title: string;
-  tagline: string;
-  heroKicker: string;
+  subtitle: string;
   description: string;
-  longDescription: string;
-  benefits: { title: string; text: string }[];
-  steps: { title: string; text: string }[];
-  pricing: PricingRow[];
-  accent: string;
+  heroImage: string;
+  heroAlt: string;
+  highlights: Item[];
+  includeTitle: string;
+  includeIntro?: string;
+  includes: Item[];
+  whyTitle: string;
+  whyIntro?: string;
+  benefits: Item[];
+  stepsTitle: string;
+  stepsIntro?: string;
+  steps: Item[];
+  extraTitle: string;
+  extraItems: Item[];
+  pricingNote?: string;
+  pricing: PriceRow[];
 };
 
 export const services: Service[] = [
   {
     slug: "fast-fixed",
     shortName: "Fast & Fixed",
-    title: "Fast & Fixed",
-    tagline: "Dinți ficși în 24 de ore",
-    heroKicker: "Protocol implantar imediat",
+    kicker: "Implanturi dentare · Fast & Fixed",
+    title: "Dinți ficși în 24h",
+    subtitle: "Fast & Fixed. Zâmbet complet, rapid.",
     description:
-      "Reabilitare orală completă pe implante, cu punte provizorie fixă montată în aceeași zi. Soluția este gândită pentru pacienții care vor să iasă din clinică cu un zâmbet funcțional, fără perioade lungi fără dinți.",
-    longDescription:
-      "Fast & Fixed este un protocol de implantologie imediată: extracțiile necesare, inserarea implantelor și protezarea temporară fixă se planifică într-un flux compact. Lucrarea provizorie este înșurubată pe implante, nu se scoate noaptea, iar masticarea ușoară este posibilă imediat. După ostointegrare, puntea provizorie este înlocuită cu restaurarea definitivă din materiale de înaltă rezistență. Toate tarifele de mai jos sunt orientative, pentru demonstrație.",
-    benefits: [
-      {
-        title: "Zâmbet în 24h",
-        text: "Punte fixă provizorie în aceeași zi cu intervenția, fără proteză mobilă clasică.",
-      },
-      {
-        title: "Planificare 3D",
-        text: "Poziția implantelor și forma lucrării se definesc pe CBCT și scanare digitală.",
-      },
-      {
-        title: "Stabilitate imediată",
-        text: "Implante cu ancorare primară ridicată, potrivite pentru încărcare imediată.",
-      },
-      {
-        title: "Estetică naturală",
-        text: "Ghidaj gingival și proporții faciale urmărite încă din faza provizorie.",
-      },
+      "Soluție modernă de reabilitare orală completă — tratament rapid, sigur și minim invaziv, cu recuperare asistată medical.",
+    heroImage: "/heroes/fast-fixed.jpg",
+    heroAlt: "Lucrare Fast & Fixed pe implante",
+    highlights: [
+      { title: "Dinți ficși în 24h", text: "Zâmbet complet, imediat." },
+      { title: "Siguranță și predictibilitate", text: "Plan de tratament personalizat." },
+      { title: "Estetică și funcționalitate", text: "Fără proteze mobile, confort maxim." },
     ],
+    includeTitle: "Ce este protocolul Fast & Fixed?",
+    includeIntro:
+      "Tehnică avansată ce folosește un număr redus de implante (de regulă 4 la mandibulă și 6 la maxilar) pentru fixarea unei lucrări provizorii în ~24 de ore.",
+    includes: [
+      { title: "Indicat pacienților", text: "Fără dinți sau cu dinți irecuperabili." },
+      { title: "Poziționare strategică", text: "Reduce nevoia de adaosuri osoase." },
+      { title: "Lucrare provizorie fixă", text: "Înșurubată, nu se scoate noaptea." },
+    ],
+    whyTitle: "De ce clinica noastră?",
+    whyIntro: "Planificare digitală, chirurgie minim invazivă și laborator propriu.",
+    benefits: [
+      { title: "Dinți ficși în 24h", text: "Confort imediat." },
+      { title: "Timp total redus", text: "Mai puține ședințe." },
+      { title: "Estetică și stabilitate", text: "Fără proteze mobile." },
+      { title: "De multe ori fără grefe osoase", text: "Evităm proceduri suplimentare." },
+      { title: "Cost optimizat", text: "Investiție inteligentă." },
+      { title: "Mentenanță clară", text: "Follow-up pe termen lung." },
+    ],
+    stepsTitle: "Etapele tratamentului",
+    stepsIntro: "Un proces clar, în 5 pași.",
     steps: [
-      {
-        title: "Consultație și imagistică",
-        text: "Examen clinic, CBCT, fotografii și scanare intraorală pentru planul chirurgical.",
-      },
-      {
-        title: "Planul de tratament",
-        text: "Stabilim numărul de implante, extragerile, forma punții și calendarul de 24h.",
-      },
-      {
-        title: "Intervenția",
-        text: "Extracții acolo unde este nevoie, inserare implante și suturi minim invazive.",
-      },
-      {
-        title: "Puntea fixă",
-        text: "Montarea lucrării provizorii înșurubate, verificare ocluzie și instrucțiuni de igienă.",
-      },
-      {
-        title: "Lucrarea definitivă",
-        text: "După vindecare, înlocuim provizoriul cu puntea finală din zirconiu sau material echivalent.",
-      },
+      { title: "Consultație & diagnostic", text: "Analizăm situația și stabilim opțiunile." },
+      { title: "Plan de tratament", text: "Planificare digitală personalizată." },
+      { title: "Chirurgie implaturi", text: "4 la mandibulă, 6 la maxilar." },
+      { title: "Lucrare provizorie", text: "În ~24 de ore." },
+      { title: "Lucrare definitivă", text: "3–6 luni." },
+    ],
+    extraTitle: "Ce mai trebuie să știi?",
+    extraItems: [
+      { title: "Candidați", text: "Persoane fără dinți sau cu dinți irecuperabili, cu o stare generală de sănătate bună." },
+      { title: "Igienă", text: "Îngrijire riguroasă și controale periodice." },
+      { title: "Garanții", text: "Materiale premium și garanție pentru lucrări." },
     ],
     pricing: [
-      { name: "Consultație Fast & Fixed + plan 3D", price: "350 lei" },
-      { name: "Arcadă completă — protocol imediat (provizoriu inclus)", price: "de la 18.900 lei", note: "orientativ" },
-      { name: "Ambele arcade — protocol imediat", price: "de la 34.900 lei", note: "orientativ" },
-      { name: "Punte definitivă zirconiu / arcadă", price: "de la 12.500 lei" },
+      { name: "Implanturi + lucrare provizorie (~24h)", detail: "Consultație, imagistică, chirurgie, lucrare provizorie înșurubată", price: "1–2 zile" },
+      { name: "Lucrare definitivă (3–6 luni)", detail: "Structură și dinți definitivi, zirconiu / ceramică, garanție", price: "3–6 luni" },
     ],
-    accent: "#0f766e",
   },
   {
     slug: "stomatologie-generala",
     shortName: "Generală",
+    kicker: "Zâmbet sănătos · viață mai bună",
     title: "Stomatologie Generală",
-    tagline: "Îngrijire completă, de la prevenție la restaurare",
-    heroKicker: "Medicină dentară de zi cu zi",
+    subtitle: "Îngrijire completă pentru zâmbetul tău, fără compromisuri.",
     description:
-      "Servicii esențiale pentru sănătatea orală: consultații, detartraj, obturații, tratamente preventive și restaurări conservatoare, într-un flux calm și predictibil.",
-    longDescription:
-      "Stomatologia generală este baza oricărui plan de tratament. Începem cu un diagnostic clar, radiografii acolo unde e nevoie și un protocol de igienă profesională. Caria, sensibilitatea, obturațiile vechi și urgențele simple se tratează cu materiale contemporane, sub izolare și cu respect pentru structura dentară restantă. Pacientul pleacă cu un plan scris, nu cu surprize.",
-    benefits: [
-      {
-        title: "Diagnostic clar",
-        text: "Consultație structurată, fotografii și recomandare imagistică acolo unde contează.",
-      },
-      {
-        title: "Prevenție reală",
-        text: "Detartraj, airflow, fluorurări și instrucțiuni personalizate de igienă.",
-      },
-      {
-        title: "Restaurări conservatoare",
-        text: "Obturații estetice, inlay/onlay și reparații minime, fără sacrificiu inutil de smalț.",
-      },
-      {
-        title: "Urgențe de zi",
-        text: "Durere, obturație căzută sau dinte fracturat — triaj rapid în programul clinicii.",
-      },
+      "De la consultație periodică și igienizare profesională, la tratamente minim invazive pentru carii, afecțiuni gingivale și urgențe. Punem accent pe prevenție, confort și rezultate estetice naturale.",
+    heroImage: "/heroes/stomatologie-generala.jpg",
+    heroAlt: "Cabinet de stomatologie generală",
+    highlights: [
+      { title: "Tehnologie modernă", text: "Diagnostic precis și tratamente sigure." },
+      { title: "Echipă noastră", text: "Profesioniști cu experiență și empatie." },
+      { title: "Zâmbete reale", text: "Rezultate naturale pe termen lung." },
     ],
+    includeTitle: "Ce include stomatologia generală?",
+    includeIntro: "Toate serviciile esențiale pentru sănătatea și frumusețea zâmbetului tău, într-un singur loc.",
+    includes: [
+      { title: "Consultație & diagnostic", text: "Examinare clinică, imagistică digitală și plan personalizat." },
+      { title: "Igienizare profesională", text: "Detartraj, ultrasunete, airflow, periaj și instrucțiuni de igienă." },
+      { title: "Tratamentul cariei", text: "Obturații estetice din compozit, tehnici aditive moderne." },
+      { title: "Tratament endodontic", text: "Tratamente de canal moderne pentru salvarea dinților afectați." },
+      { title: "Parodontologie de bază", text: "Managementul gingivitei și mentenanță parodontală." },
+      { title: "Urgențe stomatologice", text: "Calmarea durerii și intervenții rapide." },
+    ],
+    whyTitle: "De ce să alegi abordarea noastră?",
+    whyIntro: "Pentru că fiecărui pacient contează, iar noi punem grijă și profesionalism pe primul loc.",
+    benefits: [
+      { title: "Abordare empatică și relaxantă", text: "Fără frica de dentist." },
+      { title: "Tehnologie digitală", text: "Diagnostic precis și tratamente mai eficiente." },
+      { title: "Tratamente minim invazive", text: "Cât mai puțină intervenție." },
+      { title: "Programări eficiente", text: "Timpul tău contează." },
+      { title: "Transparență totală a costurilor", text: "Fără surprize, tot din timp." },
+      { title: "Prevenție activă", text: "Zâmbet sănătos, an de an." },
+    ],
+    stepsTitle: "Cum decurge o vizită?",
+    stepsIntro: "Un proces simplu, clar și sigur, pentru confortul tău.",
     steps: [
-      {
-        title: "Consultația inițială",
-        text: "Anamneză, examen clinic și, dacă e cazul, radiografie bitewing sau periapicală.",
-      },
-      {
-        title: "Igienizare",
-        text: "Detartraj ultrasonic, lustruire și controlul inflamației gingivale.",
-      },
-      {
-        title: "Tratamente restaurative",
-        text: "Obturații, reconstituiri și ajustări ocluzale, în ședințe scurte.",
-      },
-      {
-        title: "Plan de mentenanță",
-        text: "Rechemări la 4–6 luni, în funcție de risc de carie și de parodontită.",
-      },
+      { title: "Anamneză & evaluare", text: "Discuție despre istoricul medical și examinarea clinică." },
+      { title: "Investigații & diagnostic", text: "Radiografii sau imagistică suplimentară la nevoie." },
+      { title: "Plan & opțiuni", text: "Diagnostic precis, priorități și costuri." },
+      { title: "Tratament & prevenție", text: "Intervenții sigure, fără durere, cu anestezie locală." },
+    ],
+    extraTitle: "Recomandări de prevenție",
+    extraItems: [
+      { title: "Control la 6 luni", text: "Depistăm din timp orice problemă." },
+      { title: "Periaj corect", text: "De 2 ori/zi, de două ori pe zi." },
+      { title: "Gutiere de protecție", text: "Pentru sport, bruxism sau ocluzie dificilă." },
     ],
     pricing: [
-      { name: "Consultație stomatologie generală", price: "150 lei" },
-      { name: "Detartraj + airflow + fluorizare", price: "350 lei" },
-      { name: "Obturație estetică 1 față", price: "280 lei" },
-      { name: "Obturație estetică 2–3 fețe", price: "380–450 lei" },
-      { name: "Urgență (consultație + calmarea durerii)", price: "200 lei" },
+      { name: "Consultație inițială", detail: "Anamneză, evaluare clinică, recomandări", price: "150–250 lei" },
+      { name: "Igienizare profesională", detail: "Detartraj + airflow/periaj, instrucțiuni", price: "250–400 lei" },
+      { name: "Obturație compozit", detail: "Închidere, izolare, estetică, restaurare cavități", price: "300–600 lei" },
+      { name: "Tratament endodontic", detail: "Instrumentare, dezinfecție și obturație canal", price: "600–1.200 lei" },
+      { name: "Parodontologie de bază", detail: "Scaling în țesuturi moi, mentenanță", price: "400–800 lei" },
     ],
-    accent: "#475569",
   },
   {
     slug: "implantologie",
     shortName: "Implanturi",
-    title: "Implantologie Dentară",
-    tagline: "Rădăcini artificiale, dinți stabili pe termen lung",
-    heroKicker: "Înlocuire predictibilă a dinților lipsă",
+    kicker: "Implanturi dentare · tehnologie · încredere",
+    title: "Implantologie Dentară Avansată",
+    subtitle: "Soluția modernă și definitivă pentru înlocuirea dinților lipsă.",
     description:
-      "Implante dentare pentru un dinte, mai mulți dinți sau arcade întregi. Planificare ghidată, materiale de calitate și un protocol de vindecare urmărit atent.",
-    longDescription:
-      "Implantul dentar înlocuiește rădăcina dintelui lipsă și susține o coroană, o punte sau o lucrare fixă pe mai mulți stâlpi. Succesul ține de os, de igienă, de fumat și de planificare. Folosim imagistică 3D, ghiduri chirurgicale acolo unde aduc precizie și o etapizare clară: inserare, vindecare, bont și coroană. Augmentările osoase se discută transparent, înainte de a începe.",
+      "Redă funcționalitatea masticatiei și estetica naturală a zâmbetului tău cu ajutorul implanturilor dentare de înaltă calitate, inserate prin tehnici chirurgicale minim invazive și planificare digitală 3D.",
+    heroImage: "/heroes/implantologie.jpg",
+    heroAlt: "Implant dentar și coroană",
+    highlights: [
+      { title: "Planificare 3D", text: "Precizie maximă." },
+      { title: "Materiale premium", text: "Titan / zirconiu." },
+      { title: "Rezultate naturale", text: "Zâmbet de durată." },
+    ],
+    includeTitle: "Ce este implantul dentar?",
+    includes: [
+      { title: "Ce reprezintă?", text: "O rădăcină artificială din titan sau zirconiu care se integrează perfect în osul maxilar." },
+      { title: "Durabilitate pe termen lung", text: "O alternativă superioară punților clasice sau protezelor mobile." },
+      { title: "Soluții personalizate", text: "De la înlocuirea unui singur dinte până la reabilitări orale totale." },
+    ],
+    whyTitle: "De ce să alegi abordarea noastră?",
     benefits: [
-      {
-        title: "Un dinte sau o arcadă",
-        text: "De la implant singular până la reconstrucții complete pe mai mulți stâlpi.",
-      },
-      {
-        title: "Ghidaj digital",
-        text: "Poziție, ax și adâncime calculate pe CBCT, nu „din ochi”.",
-      },
-      {
-        title: "Conservarea osului",
-        text: "Implantul stimulează osul și evită resorbția tipică după extracții netratate.",
-      },
-      {
-        title: "Masticație stabilă",
-        text: "Fără agrafe vizibile și fără alunecarea protezei mobile.",
-      },
+      { title: "Rată de succes extrem de ridicată", text: "Prin ghidaj digital 3D." },
+      { title: "Chirurgie minim invazivă", text: "Confortabilă și fără durere (anestezie/sedare)." },
+      { title: "Estetică impecabilă", text: "Imposibil de diferențiat de un dinte natural." },
+      { title: "Prevenirea resorbției osoase", text: "Și a atrofiei maxilare." },
+      { title: "Garanție extinsă", text: "Și materiale premium de la producători de top." },
+      { title: "Planuri de finanțare flexibile", text: "Și transparență a costurilor." },
     ],
+    stepsTitle: "Etapele tratamentului",
     steps: [
-      {
-        title: "Evaluare 3D",
-        text: "CBCT, modele digitale și analiză a volumului osos și a sinusurilor.",
-      },
-      {
-        title: "Plan chirurgical",
-        text: "Alegem sistemul de implant, necesitatea augmentării și tipul de restaurare.",
-      },
-      {
-        title: "Inserarea implantului",
-        text: "Intervenție sub anestezie locală, cu sau fără ghid chirurgical.",
-      },
-      {
-        title: "Vindecare",
-        text: "Ostointegrare de câteva luni, cu controale și igienă specială.",
-      },
-      {
-        title: "Coroana pe implant",
-        text: "Bont personalizat și coroană ceramică / zirconiu, verificată în ocluzie.",
-      },
+      { title: "Consultație & imagistică 3D", text: "Evaluarea stării de sănătate și tomografie CBCT." },
+      { title: "Inserarea implantului", text: "Intervenție chirurgicală rapidă, sigură și fără durere." },
+      { title: "Osteointegrarea", text: "Perioada de vindecare în care implantul fuzionează natural cu osul — 3–6 luni." },
+      { title: "Montarea coroanei definitive", text: "Fixarea dintelui final care reface frumusețea și masticația." },
     ],
+    extraTitle: "Recomandări post-intervenție",
+    extraItems: [
+      { title: "Igienă riguroasă", text: "Periaj și ață dentară, conform indicațiilor." },
+      { title: "Controale periodice", text: "Monitorizarea vindecării și a stabilității." },
+      { title: "Renunțarea la obiceiuri nocive", text: "Fumat, alcool, bruxism (acțiunea dinților)." },
+    ],
+    pricingNote: "Prețuri în EUR, orientative.",
     pricing: [
-      { name: "Consultație implantologie + CBCT interpretare", price: "300 lei" },
-      { name: "Implant dentar (inserare)", price: "de la 2.400 lei" },
-      { name: "Bont + coroană pe implant", price: "de la 2.200 lei" },
-      { name: "Sinus lift / augmentare osoasă", price: "de la 1.800 lei", note: "orientativ" },
+      { name: "Consultație & plan de tratament", detail: "Evaluare clinică, interpretare CBCT, deviz detaliat", price: "50–100" },
+      { name: "Implant dentar (standard / premium)", detail: "Corpul implantului din titan + manoperă chirurgicală", price: "500–850" },
+      { name: "Bont protetic", detail: "Element de legătură între implant și coroană", price: "150–300" },
+      { name: "Coroană pe implant (zirconiu / ceramică)", detail: "Formă naturală, rezistență și biocompatibilitate", price: "400–800" },
+      { name: "Adaos de os / sinus lift", detail: "Proceduri de augmentare osoasă pre-implant", price: "300–1.000" },
     ],
-    accent: "#0f766e",
   },
   {
     slug: "chirurgie",
     shortName: "Chirurgie",
-    title: "Chirurgie Dentară",
-    tagline: "Intervenții precise, recuperare urmărită",
-    heroKicker: "Chirurgie orală minim invazivă",
+    kicker: "Chirurgie dentară",
+    title: "Chirurgie Dentară Avansată",
+    subtitle: "Intervenții sigure, fără durere și cu o recuperare rapidă.",
     description:
-      "Extracții, molari de minte incluși, rezecții, chistectomii și pregătire osoasă pentru implante — cu protocol de durere și edem controlat.",
-    longDescription:
-      "Chirurgia dentară rezolvă situațiile pe care tratamentul conservator nu le mai poate salva: dinți incluși, rădăcini restante, infecții periapicale persistente sau leziuni osoase. Lucrăm cu anestezie eficientă, suturi fine și instrucțiuni clare pentru primele 72 de ore. Când cazul o cere, colaborăm cu imagistica 3D pentru a evita structurile anatomice riscante.",
-    benefits: [
-      {
-        title: "Extracții atraumatic",
-        text: "Conservăm corticala și papilele, important dacă urmează un implant.",
-      },
-      {
-        title: "Molari incluși",
-        text: "Plan pe CBCT pentru nervul alveolar inferior și sinusul maxilar.",
-      },
-      {
-        title: "Recuperare ghidată",
-        text: "Schema de antiinflamatoare, gheață și alimentație, explicată pe loc.",
-      },
-      {
-        title: "Urgențe chirurgicale",
-        text: "Abcese, dinți fracturați subgingival, hemoragii post-extracție.",
-      },
+      "Tratamente chirurgicale efectuate cu precizie maximă, tehnologii moderne și protocoale stricte de siguranță. De la extracții complexe și molari de minte, la chirurgie parodontală și reabilitări osoase.",
+    heroImage: "/heroes/chirurgie.jpg",
+    heroAlt: "Extracție dentară precisă",
+    highlights: [
+      { title: "Tehnologie modernă", text: "Planificare digitală și echipamente de ultimă oră." },
+      { title: "Recuperare rapidă", text: "Protocoale moderne de îngrijire post-operatorie." },
+      { title: "Siguranță maximă", text: "Echipă specializată și standarde stricte." },
+      { title: "Confort sporit", text: "Anestezie eficientă și monitorizare continuă." },
     ],
+    includeTitle: "Ce include chirurgia dentară?",
+    includeIntro: "Intervenții esențiale pentru sănătatea și funcționalitatea zâmbetului tău.",
+    includes: [
+      { title: "Extracții dentare complexe", text: "Include molari de minte incluși sau semi-incluși." },
+      { title: "Chirurgie apicală", text: "Rezecții apicale pentru salvarea dinților cu infecții persistente." },
+      { title: "Reabilitare osoasă și adaos de os", text: "Pregătirea terenului pentru implanturi." },
+      { title: "Sinus lift", text: "Extern și intern, pentru augmentarea osului la maxilarul superior." },
+      { title: "Chistectomii", text: "Îndepărtarea formațiunilor benigne." },
+    ],
+    whyTitle: "De ce să alegi abordarea noastră?",
+    whyIntro: "O experiență sigură, confortabilă și predictibilă, pentru fiecare pacient.",
+    benefits: [
+      { title: "Confort absolut", text: "Tehnici moderne de anestezie și sedare controlată." },
+      { title: "Chirurgie minim invazivă", text: "Vindecare rapidă și edem minim." },
+      { title: "Echipă supraspecializată", text: "Chirurgie oro-maxilo-facială." },
+      { title: "Sterilizare & siguranță", text: "Protocoale stricte de decontaminare." },
+      { title: "Monitorizare post-operatorie", text: "Suport permanent și control atent." },
+      { title: "Planificare digitală", text: "Predictibilitate totală a rezultatului." },
+    ],
+    stepsTitle: "Cum decurge intervenția?",
+    stepsIntro: "Un proces clar, sigur și bine structurat.",
     steps: [
-      {
-        title: "Diagnostic",
-        text: "Clinic + radiografie sau CBCT, evaluarea riscului nervos și sinusului.",
-      },
-      {
-        title: "Pregătire",
-        text: "Analize dacă e nevoie, medicație preoperatorie, consimțământ informat.",
-      },
-      {
-        title: "Intervenția",
-        text: "Anestezie, abord chirurgical, toaletă a plăgii și sutură.",
-      },
-      {
-        title: "Control",
-        text: "Suprimarea firelor și verificarea vindecării la 7–10 zile.",
-      },
+      { title: "Consultație & imagistică", text: "Evaluare detaliată și tomografie CBCT." },
+      { title: "Anestezie & pregătire", text: "Inducerea unui confort total." },
+      { title: "Intervenția chirurgicală", text: "Procedură precisă și minim invazivă." },
+      { title: "Indicații & recuperare", text: "Recomandări detaliate, control și succedaneu fluid." },
+    ],
+    extraTitle: "Recomandări post-operatorii",
+    extraItems: [
+      { title: "Evită efortul fizic", text: "Cel puțin 5–10 zile după intervenție." },
+      { title: "Igienă blândă", text: "Periaj delicat și ape de gură recomandate." },
+      { title: "Medicație prescrisă", text: "Respectă schema de tratament." },
     ],
     pricing: [
-      { name: "Extracție simplă", price: "250–400 lei" },
-      { name: "Extracție molar de minte (erupt)", price: "450–650 lei" },
-      { name: "Extracție molar inclus / semiinclus", price: "700–1.100 lei" },
-      { name: "Rezecție apicală", price: "de la 800 lei" },
+      { name: "Extracție dentară simplă / simplă-rapidă", price: "250–400 lei" },
+      { name: "Extracție molar de minte (inclus / semi-inclus)", price: "600–1.200 lei" },
+      { name: "Rezecție apicală", price: "800–1.500 lei" },
+      { name: "Sinus lift (intern sau extern)", price: "1.500–3.000 lei" },
+      { name: "Adaos de os / biomaterial", price: "1.000–2.500 lei" },
     ],
-    accent: "#334155",
   },
   {
     slug: "estetica",
     shortName: "Estetică",
-    title: "Estetică Dentară",
-    tagline: "Formă, culoare și simetrie, fără exagerare",
-    heroKicker: "Zâmbet proiectat, nu inventat",
+    kicker: "Estetică dentară · zâmbet · încredere",
+    title: "Estetică Dentară Avansată",
+    subtitle: "Zâmbetul perfect, natural și plin de încredere pe care îl meriți.",
     description:
-      "Albire, fațete, coroane full-contour și reconturare gingivală. Estetica se construiește pe ocluzie sănătoasă și pe dinți tratați corect, nu doar pe un set de poze.",
-    longDescription:
-      "Un zâmbet reușit începe cu mock-up și fotografie, nu cu șlefuire. Propunem albire profesională, bonding conservator sau fațete din ceramică, în funcție de cât de mult vrem să schimbăm forma. Culoarea se alege la lumina zilei, iar gingia se respectă — un zâmbet „hollywood” care inflamează papilele nu este un succes. Demo-ul arată traseul clinic real, cu prețuri orientative.",
-    benefits: [
-      {
-        title: "Mock-up înainte de șlefuire",
-        text: "Vezi forma pe dinții tăi, în oglindă, înainte de a accepta planul.",
-      },
-      {
-        title: "Albire controlată",
-        text: "Protocol în cabinet sau gutiere, fără a arde smalțul.",
-      },
-      {
-        title: "Fațete minimale",
-        text: "Preparare subțire acolo unde se poate, ceramică stratificată.",
-      },
-      {
-        title: "Armonie facială",
-        text: "Linia mediană, expoziția incisivilor și coridorul buccal se măsoară, nu se ghicesc.",
-      },
+      "Transformă-ți zâmbetul cu ajutorul soluțiilor moderne de estetică dentară: fațete ceramice ultra-subțiri, albire profesională de top, coroane estetice din zirconiu și design digital al zâmbetului (Digital Smile Design).",
+    heroImage: "/heroes/estetica.jpg",
+    heroAlt: "Zâmbet simetric după estetică dentară",
+    highlights: [
+      { title: "Zâmbet simetric", text: "Proporții armonioase." },
+      { title: "Formă perfectă", text: "Contur personalizat." },
+      { title: "Culoare naturală", text: "Nuanță potrivită feței." },
     ],
+    includeTitle: "Ce include Estetica Dentară?",
+    includeIntro: "Soluții complete pentru un zâmbet frumos și sănătos.",
+    includes: [
+      { title: "Fațete dentare", text: "Ceramică sau compozit pentru corectarea formei, culorii și alinerii dinților." },
+      { title: "Albire profesională în cabinet", text: "Sisteme avansate cu lampă pentru rezultate spectaculoase." },
+      { title: "Coroane și punți ceramice / zirconiu", text: "Estetică impecabilă și biocompatibilitate maximă." },
+      { title: "Design Digital al Zâmbetului", text: "Previzualizarea zâmbetului înainte de începerea tratamentului." },
+      { title: "Restaurări fizionomice invizibile", text: "Plombele estetice care imită perfect structura dintelui natural." },
+    ],
+    whyTitle: "De ce să alegi abordarea noastră?",
+    whyIntro: "O experiență premium, centrată pe tine.",
+    benefits: [
+      { title: "Abordare artistică + precizie digitală", text: "Estetică și tehnologie la cele mai înalte standarde." },
+      { title: "Conservarea maximă a țesutului sănătos", text: "Preparare minim-invazivă sau non-invazivă." },
+      { title: "Materiale premium de import", text: "Ultra-estetică cu luciu natural." },
+      { title: "Previzualizarea rezultatului final", text: "Înainte de șlefuire." },
+      { title: "Confort absolut", text: "Proceduri 100% fără durere." },
+      { title: "Rezultate spectaculoase", text: "Întinerire fiziognomică reală." },
+    ],
+    stepsTitle: "Cum se obține un nou zâmbet?",
+    stepsIntro: "Un proces clar, sigur și personalizat.",
     steps: [
-      {
-        title: "Design de zâmbet",
-        text: "Fotografii, scanare, wax-up digital și discuție despre așteptări.",
-      },
-      {
-        title: "Mock-up",
-        text: "Transferul formei pe dinți, ajustări de lungime și contur.",
-      },
-      {
-        title: "Preparare și amprentă",
-        text: "Șlefuire minimă, cordon gingival, scanare sau amprentă analogică.",
-      },
-      {
-        title: "Cimentare",
-        text: "Proba ceramicii, culoare de ciment și lustruire finală.",
-      },
+      { title: "Consultația estetică & DSD", text: "Analiză fiziognomică, fotografii profesionale și simularea zâmbetului." },
+      { title: "Pregătirea & amprentarea", text: "Șlefuire minimă-globală și amprentă digitală de înaltă precizie." },
+      { title: "Proba provizorie", text: "Testarea formei și esteticii în realitate." },
+      { title: "Cimentarea definitivă", text: "Aplicarea fațetelor sau coroanelor finale." },
+    ],
+    extraTitle: "Sfaturi de întreținere",
+    extraItems: [
+      { title: "Igienă riguroasă", text: "Periaj, ață dentară și ape de gură." },
+      { title: "Evită alimentele care colorează", text: "În primele zile după albire." },
+      { title: "Controale periodice", text: "La 6 luni." },
     ],
     pricing: [
-      { name: "Albire profesională în cabinet", price: "1.200 lei" },
-      { name: "Bonding estetic / dinte", price: "450–700 lei" },
-      { name: "Fațetă ceramică / dinte", price: "de la 1.800 lei" },
-      { name: "Coroană zirconiu estetică", price: "de la 1.600 lei" },
+      { name: "Albire profesională (cabinet + kit acasă)", price: "400–650 lei" },
+      { name: "Fațetă ceramică (e.max) / dinte", price: "1.200–2.000 lei" },
+      { name: "Coroană estetică din zirconiu", price: "1.000–1.600 lei" },
+      { name: "Digital Smile Design (simulare)", price: "300–400 lei" },
+      { name: "Restaurare fizionomică / dinte", price: "600–1.000 lei" },
     ],
-    accent: "#0e7490",
   },
   {
     slug: "parodontologie",
     shortName: "Paro",
-    title: "Parodontologie",
-    tagline: "Gingii stabile, os conservat, dinți păstrați",
-    heroKicker: "Tratamentul bolii parodontale",
+    kicker: "Parodontologie · sănătatea gingivală",
+    title: "Tratamente Parodontale Avansate",
+    subtitle: "Salvează-ți zâmbetul tratând afecțiunile gingiilor și ale osului de susținere.",
     description:
-      "Diagnostic de parodontită, debridare în profunzime, chirurgie mucogingivală și mentenanță. Fără controlul gingiei, orice lucrare estetică sau implantar e fragilă.",
-    longDescription:
-      "Parodontita este o boală inflamatorie a țesuturilor de susținere. Măsurăm pungi, sângerare, recesii și mobilitate, apoi stabilim un protocol: igienizare, scaling și root planing, reevaluare și, dacă e nevoie, chirurgie de regenerare sau de acoperire a recesiilor. Mentenanța la 3–4 luni nu este opțională — este partea care ține rezultatul.",
-    benefits: [
-      {
-        title: "Status parodontal complet",
-        text: "Hărți de sondare, fotografii și radiografii comparative.",
-      },
-      {
-        title: "Stoparea inflamației",
-        text: "Debridare subgingivală, uneori cu adjuvant antiseptic.",
-      },
-      {
-        title: "Estetică gingivală",
-        text: "Grefă de conjunctiv, alungire coronară, simetrie a zâmbetului gingival.",
-      },
-      {
-        title: "Bază pentru implante",
-        text: "Nu inserăm implante într-o gură cu parodontită activă netratată.",
-      },
+      "Gingiile sănătoase sunt fundamentul unui zâmbet stabil. Oferim tratamente moderne, minim invazive, pentru gingivită, parodontită (parodontoză), igienizare profundă subgingivală și regenerare tisulară.",
+    heroImage: "/heroes/parodontologie.jpg",
+    heroAlt: "Tratament parodontal pe model anatomic",
+    highlights: [
+      { title: "Diagnostic precis", text: "Măsurători și imagistică." },
+      { title: "Tehnologie modernă", text: "Airflow, laser, ultrasonice." },
+      { title: "Tratament minim invaziv", text: "Cât mai puțin disconfort." },
+      { title: "Rezultate de durată", text: "Mentenanță personalizată." },
     ],
+    includeTitle: "Ce tratăm în parodontologie?",
+    includeIntro: "Oferim soluții complete pentru sănătatea gingiilor și a osului de susținere.",
+    includes: [
+      { title: "Gingivita și parodontita", text: "Diagnosticarea precoce și oprirea evoluției bolii." },
+      { title: "Detartraj ultrasonic și Airflow profesional", text: "Curățarea depozitelor bacteriene și a tartrului profund." },
+      { title: "Chiuretaj în câmp închis / terapie cu laser", text: "Curățarea pungilor parodontale și distrugerea bacteriilor." },
+      { title: "Chirurgie parodontală regenerativă", text: "Corectarea retracțiilor gingivale și refacerea osului afectat." },
+      { title: "Mentenanță parodontală periodică", text: "Program personalizat de prevenție și monitorizare." },
+    ],
+    whyTitle: "Semnele că ai nevoie de parodontologie",
+    whyIntro: "Nu ignora aceste semnale! Iată indiciile problemelor gingivale și osoase.",
+    benefits: [
+      { title: "Sângerare gingivală", text: "Aparentă sau în timpul periajului." },
+      { title: "Gingii roșii, umflate", text: "Sau sensibilitate la atingere." },
+      { title: "Retracție gingivală", text: "Dinții par a fi „mai lungi”." },
+      { title: "Respirație urât mirositoare", text: "Cronică (halitoză)." },
+      { title: "Mobilitate dentară", text: "Sau modificarea poziției dinților." },
+      { title: "Sensibilitate crescută", text: "La cald/rece în zona coletului." },
+    ],
+    stepsTitle: "Cum decurge tratamentul",
+    stepsIntro: "Un proces bine definit, pentru rezultate sigure și de durată.",
     steps: [
-      {
-        title: "Diagnostic",
-        text: "Sondare în 6 puncte / dinte, indici de igienă, radiografii.",
-      },
-      {
-        title: "Faza cauzală",
-        text: "Igienizare profesională și instruire, apoi scaling pe cadrane.",
-      },
-      {
-        title: "Reevaluare",
-        text: "La 6–8 săptămâni măsurăm din nou pungile și sângerarea.",
-      },
-      {
-        title: "Faza corectivă + mentenanță",
-        text: "Chirurgie acolo unde persistă pungi adânci, apoi rechemări strânse.",
-      },
+      { title: "Evaluarea parodontală", text: "Măsurarea adâncimii pungilor și examinări radiologice." },
+      { title: "Igienizarea profesională inițială", text: "Îndepărtarea tartrului supragingival și subgingival." },
+      { title: "Terapia specializată", text: "Chiuretaj, terapie cu laser sau intervenții chirurgicale după caz." },
+      { title: "Programul de mentenanță", text: "Rechemări periodice la 3–4 luni." },
+    ],
+    extraTitle: "Sfaturi de igienă pentru gingii sănătoase",
+    extraItems: [
+      { title: "Duș bucal", text: "Elimină placa bacteriană din zonele greu accesibile." },
+      { title: "Ață dentară", text: "Curăță spațiile interdentare." },
+      { title: "Periuțe interdentare", text: "Îndepărtează eficient resturile alimentare." },
+      { title: "Paste speciale", text: "Cu gel ingrediente active pentru gingii sensibile." },
     ],
     pricing: [
-      { name: "Status parodontal complet", price: "250 lei" },
-      { name: "Scaling & root planing / cadran", price: "400 lei" },
-      { name: "Chirurgie parodontală / zonă", price: "de la 1.200 lei" },
-      { name: "Acoperire recesie (grefă)", price: "de la 1.500 lei" },
+      { name: "Consultație & evaluare parodontală", price: "200–300 lei" },
+      { name: "Detartraj, complex + Airflow + Periaj", price: "350–500 lei" },
+      { name: "Chiuretaj parodontal / cadran (în câmp închis)", price: "400–600 lei" },
+      { name: "Tratament parodontal cu laser (per ședință)", price: "500–800 lei" },
+      { name: "Tratament dinți moi (per arcadă)", price: "600–900 lei" },
     ],
-    accent: "#047857",
   },
   {
     slug: "pedodontie",
     shortName: "Copii",
-    title: "Pedodonție",
-    tagline: "Stomatologie pentru copii, fără grabă și fără teamă",
-    heroKicker: "Primul contact cu dentistul contează",
+    kicker: "Pedodonție",
+    title: "Pedodonție – Stomatologie pentru Copii",
+    subtitle: "Zâmbete sănătoase și fără frica de dentist, construite cu blândețe din copilărie.",
     description:
-      "Consultații prietenoase, sigilări, fluorurări, tratamentul cariilor pe dinți de lapte și pe dinții permanenți tineri, plus obiceiuri de igienă pentru acasă.",
-    longDescription:
-      "Pedodonția nu este stomatologie de adult „pe scaun mai mic”. Ritmul, limbajul și dozele de anestezie sunt adaptate vârstei. Punem accent pe prevenție: sigilări, fluor, controlul zahărului și periute corecte. Cariile pe dinții temporari se tratează — nu se așteaptă „să cadă singuri” dacă durerea sau infecția au apărut deja. Părintele rămâne partener, nu spectator confuz.",
-    benefits: [
-      {
-        title: "Adaptare graduală",
-        text: "Ședințe scurte, tell-show-do, fără forțarea copilului nepregătit.",
-      },
-      {
-        title: "Prevenție întâi",
-        text: "Sigilări de șanțuri, fluoruri și plan de igienă pe vârste.",
-      },
-      {
-        title: "Dinți de lapte tratați",
-        text: "Obturații, pulpotomii și menținătoare de spațiu când e cazul.",
-      },
-      {
-        title: "Echipă cu ortodonția",
-        text: "Depistăm inghesuiri, obiceiuri vicioase și momentul potrivit pentru aparat.",
-      },
+      "Creăm o atmosferă prietenoasă și relaxantă pentru cei mici. Oferim tratamente stomatologice adaptate vârstei lor, punând un accent deosebit pe prevenție, educație și adaptare psihologică.",
+    heroImage: "/heroes/pedodontie.jpg",
+    heroAlt: "Consultație stomatologică prietenoasă pentru copii",
+    highlights: [
+      { title: "Copii fericiți, zâmbete sănătoase!", text: "Atmosferă de joacă, fără teamă." },
     ],
+    includeTitle: "Ce include stomatologia pentru copii?",
+    includeIntro: "Servicii esențiale pentru un zâmbet sănătos și o dezvoltare armonioasă.",
+    includes: [
+      { title: "Prima vizită de adaptare", text: "Familiarizarea copilului cu cabinetul, medicul și instrumentele." },
+      { title: "Sigilarea dinților temporari și permanenți", text: "Protecție eficientă împotriva cariilor pe șanțuri și fosete." },
+      { title: "Tratamentul cariilor la dinții de lapte", text: "Obturații estetice colorate sau albe, materiale sigure." },
+      { title: "Tratamentul pulpitei și al urgențelor", text: "Salvarea dinților temporari afectați." },
+      { title: "Fluorizare profesională și igienizare", text: "Întărirea smalțului dentar." },
+    ],
+    whyTitle: "Cum ajutăm copiii să fie relaxați?",
+    whyIntro: "Fiecare copil e unic. Noi ne adaptăm nevoilor lui.",
+    benefits: [
+      { title: "Abordare blândă și răbdătoare", text: "Fără traume sau sperieturi." },
+      { title: "Explicații pe limba lor", text: "Tehnica „Spune-Arată-Fă”." },
+      { title: "Anestezie topică fără durere", text: "Gel cu arome plăcute înainte de manopere." },
+      { title: "Prevenție activă și educație prin joc", text: "Pentru acasă." },
+      { title: "Mediu prietenos, colorat și detensionat", text: "Spațiu gândit special pentru copii." },
+      { title: "Implicarea părinților", text: "În planul de educație dentară." },
+    ],
+    stepsTitle: "Etapele primei vizite",
+    stepsIntro: "O experiență pozitivă, pas cu pas.",
     steps: [
-      {
-        title: "Prima vizită",
-        text: "Cunoașterea cabinetului, control scurt, fără tratament forțat.",
-      },
-      {
-        title: "Plan preventiv",
-        text: "Sigilări, fluor, periaj demonstrativ împreună cu părintele.",
-      },
-      {
-        title: "Tratamente necesare",
-        text: "Carii, infecții sau traumatisme, cu anestezie adaptată.",
-      },
-      {
-        title: "Rechemări",
-        text: "La 4–6 luni, mai des dacă riscul de carie este ridicat.",
-      },
+      { title: "Joaca și acomodarea", text: "Copilul explorează cabinetul, cunoaște medicul și se simte în siguranță." },
+      { title: "Consultația prietenoasă", text: "Evaluarea blândă a dințișorilor, fără instrumente înfricoșătoare." },
+      { title: "Discuția cu părinții", text: "Prezentarea situației, a igienei și a planului de prevenție." },
+      { title: "Mică recompensă & zâmbete", text: "La final, fiecare copil primește o diplomă de curaj și o surpriză." },
+    ],
+    extraTitle: "Sfaturi pentru părinți",
+    extraItems: [
+      { title: "Periajul efectuat de părinți", text: "Până la 7–8 ani." },
+      { title: "Evitarea sucurilor îndulcite", text: "Și a gustărilor lipicioase." },
+      { title: "Vizite la dentist", text: "La fiecare 6 luni." },
     ],
     pricing: [
-      { name: "Consultație pedodonție", price: "120 lei" },
-      { name: "Sigilare / dinte", price: "150 lei" },
-      { name: "Obturație dinte temporar", price: "220–320 lei" },
-      { name: "Fluorizare profesională", price: "120 lei" },
+      { name: "Consultație de aclimatizare / control", price: "150 lei" },
+      { name: "Sigilare dinte (temporar sau permanent)", price: "150 lei" },
+      { name: "Obturație dinte temporar (plombă color)", price: "200 lei" },
+      { name: "Fluorizare (arcadă / ședință scurtă)", price: "120 lei" },
+      { name: "Extracție dinte temporar (lapte)", price: "150 lei" },
     ],
-    accent: "#0369a1",
   },
   {
     slug: "ortodontie",
     shortName: "Orto",
-    title: "Ortodonție & Aparate Dentare",
-    tagline: "Aliniere, ocluzie și spațiu — la copii și la adulți",
-    heroKicker: "Aparate metalice, estetice sau alignere",
+    kicker: "Ortodonție modernă · zâmbet sănătos · încredere în tine",
+    title: "Ortodonție și Aliniere Dentară",
+    subtitle: "Zâmbetul armonios și mușcătura corectă la orice vârstă.",
     description:
-      "Corectăm inghesuiri, spații, mușcături adânci sau inverse. Opțiuni: brackets metalici, ceramici și gutiere transparente, cu controale ritmice.",
-    longDescription:
-      "Ortodonția mută dinții în os cu forțe mici și continue. Înainte de aparat facem analize: fotografii, radiografie panoramică, teleradiografie dacă e nevoie și scanare. La copii urmărim și creșterea; la adulți lucrăm adesea împreună cu parodontologia și prostetica. Alignerele nu sunt magie — funcționează când cazul e bine selectat și gutierele se poartă 20–22h/zi.",
-    benefits: [
-      {
-        title: "Mai multe sisteme",
-        text: "Metal, ceramic, autoligaturant sau alignere, alese după caz, nu după modă.",
-      },
-      {
-        title: "Ocluzie, nu doar „drepți”",
-        text: "Ținta este mușcătura funcțională, nu doar linia vizibilă din față.",
-      },
-      {
-        title: "Adulți bineveniți",
-        text: "Tratamente la 30, 40 sau 50 de ani, cu respect pentru parodonțiu.",
-      },
-      {
-        title: "Contenție inclusă în plan",
-        text: "Fără contenție, dinții migrează înapoi. Planul include această etapă.",
-      },
+      "Corectează poziția dinților și a maxilarelor cu ajutorul aparatelor dentare moderne: opțiuni fixe metalice/fizionomice sau gutiere transparente aproape invizibile, adaptate stilului tău de viață.",
+    heroImage: "/heroes/ortodontie.jpg",
+    heroAlt: "Aparate metalice, fizionomice și alignere transparente",
+    highlights: [
+      { title: "Rezultate predictibile", text: "Cu tehnologie 3D." },
+      { title: "Estetică și confort", text: "La fiecare pas." },
+      { title: "O soluție pentru fiecare vârstă", text: "Copii, adolescenți, adulți." },
     ],
+    includeTitle: "Ce tipuri de aparate dentare oferim?",
+    includeIntro: "Alege-le potrivite pentru nevoile și stilul tău de viață.",
+    includes: [
+      { title: "Aparate fixe metalice", text: "Clasice, rezistente și extrem de eficiente pentru orice tip de anomalie." },
+      { title: "Aparate fixe fizionomice", text: "Din safir sau ceramică, aproape incognito pe dinți." },
+      { title: "Aliniatoare transparente", text: "Gutiere tip Spark / Invisalign — soluție detasabilă și estetică." },
+      { title: "Aparate ortodontice pentru copii", text: "Dispozitive mobile sau funcționale pentru ghidajul corect al creșterii maxilare." },
+    ],
+    whyTitle: "De ce să alegi tratamentul ortodontic?",
+    whyIntro: "Mai mult decât un zâmbet frumos — un pas spre sănătatea ta pe termen lung.",
+    benefits: [
+      { title: "Estetică facială îmbunătățită", text: "Și încredere maximă în zâmbet." },
+      { title: "Funcționalitate corectă a masticației", text: "Și corectarea ocluziei compact-mandibulare." },
+      { title: "Igienă dentară mai ușor de realizat", text: "Dacă dinții sunt aliniați corect." },
+      { title: "Prevenirea uzurii premature a smalțului", text: "Și a problemelor parodontale." },
+      { title: "Planificare digitală computerizată", text: "Cu vizualizarea rezultatului final." },
+      { title: "Monitorizare atentă și ajustări periodice", text: "Comfortabile." },
+    ],
+    stepsTitle: "Cum decurge tratamentul ortodontic?",
+    stepsIntro: "Un proces clar, etapizat și personalizat ortodontic.",
     steps: [
-      {
-        title: "Consultație ortodontică",
-        text: "Evaluare de spațiu, simetrie, obiceiuri și așteptări.",
-      },
-      {
-        title: "Analize",
-        text: "Scanare, fotografii, radiografii, uneori CBCT pentru dinți incluși.",
-      },
-      {
-        title: "Aplicarea aparatului",
-        text: "Brackets sau prima serie de alignere, plus instrucțiuni de igienă.",
-      },
-      {
-        title: "Controale și contenție",
-        text: "Activări lunare, apoi gutieră / retainer fix după debonding.",
-      },
+      { title: "Consultația & amprentarea digitală", text: "Analiză ortodontică completă, poze de diagnostic și scanări specifice." },
+      { title: "Planul de tratament 3D / Trista", text: "Prezentarea simulării digitale și alegerea tipului de aparat potrivit." },
+      { title: "Aplicarea aparatului", text: "Montarea confortabilă a aparatului fix sau livrarea primului set de gutiere." },
+      { title: "Controalele periodice & contenția", text: "Vizite la intervale regulate pentru activare, urmate de menținerea rezultatelor." },
+    ],
+    extraTitle: "Sfaturi de îngrijire esențiale",
+    extraItems: [
+      { title: "Periaj riguros", text: "După fiecare masă." },
+      { title: "Folosirea periutelor interdentare", text: "Și a dușului bucal." },
+      { title: "Evitarea alimentelor lipicioase", text: "Sau dure." },
     ],
     pricing: [
-      { name: "Consultație + plan ortodontic", price: "250 lei" },
-      { name: "Aparat metalic / arcadă", price: "de la 3.500 lei" },
-      { name: "Aparat ceramic / arcadă", price: "de la 4.500 lei" },
-      { name: "Alignere / caz complet", price: "de la 8.900 lei", note: "orientativ" },
+      { name: "Consultație ortodontică & plan de tratament", price: "200–400 lei" },
+      { name: "Aparat metalic fix metalic (per arcadă)", price: "2.500–3.500 lei" },
+      { name: "Aparat dentar fix ceramic / safir (per arcadă)", price: "2.800–4.000 lei" },
+      { name: "Aliniatoare transparente (tratament complet)", price: "6.000–12.000 lei" },
+      { name: "Set gutiere de contenție (per arcadă)", price: "600–1.000 lei" },
     ],
-    accent: "#4338ca",
   },
   {
     slug: "endodontie",
     shortName: "Canal",
-    title: "Endodonție",
-    tagline: "Tratament de canal precis, sub izolare și microscop",
-    heroKicker: "Salvăm dintele, scoatem infecția",
+    kicker: "Endodonție · precizie · conservare",
+    title: "Endodonție la Microscop",
+    subtitle: "Salvăm dinții naturali prin tratamente de canal de înaltă precizie.",
     description:
-      "Tratamente și retratamente de canal, cu izolarea dintelui, instrumentare mecanică, irigare activată și obturație tridimensională.",
-    longDescription:
-      "Endodonția tratează pulpa inflamată sau necrotică și infecțiile din jurul vârfului rădăcinii. Succesul depinde de găsirea tuturor canalelor, de curățarea lor și de o obturație etanșă, urmată de o restaurare coronară corectă. Lucrăm sub digă, cu radiografii de control sau localizator electronic de apex. Un dinte bine tratat endodontic poate rămâne ani buni pe arcadă — unul tratat „la repezeală” se reîmbolnăvește.",
-    benefits: [
-      {
-        title: "Izolare obligatorie",
-        text: "Diga de cauciuc ține canalul uscat și ferit de bacterii din salivă.",
-      },
-      {
-        title: "Instrumentare modernă",
-        text: "Ace rotative / reciproce, irigare cu hipoclorit și activare.",
-      },
-      {
-        title: "Retratamente",
-        text: "Scoatem obturații vechi, stâlpi și căutăm canale omise.",
-      },
-      {
-        title: "Fără durere inutilă",
-        text: "Anestezie eficientă; urgențele pulpite se calmează în aceeași ședință când e posibil.",
-      },
+      "Tratamente endodontice moderne efectuate sub microscop optic de înaltă mărire. Eliminăm infecțiile de la rădăcina dintelui fără durere, asigurând conservarea pe termen lung a structurii tale dentare.",
+    heroImage: "/heroes/endodontie.jpg",
+    heroAlt: "Tratament de canal vizualizat la microscop",
+    highlights: [
+      { title: "Precizie milimetrică", text: "Vizualizare detaliată a canalelor sub microscop." },
+      { title: "Fără durere", text: "Anestezie profundă și proceduri confortabile." },
+      { title: "Dinți salvați", text: "Conservăm dinții naturali pe termen lung." },
     ],
+    includeTitle: "Ce este tratamentul endodontic?",
+    includeIntro: "Un tratament complex, dar necesar, pentru sănătatea dintelui tău.",
+    includes: [
+      { title: "Ce presupune?", text: "Îndepărtarea pulpei dentare inflamate sau infectate (nervul), curățarea și dezinfectarea riguroasă a canalelor radiculare și sigilarea lor tridimensională." },
+      { title: "Când este necesar?", text: "În caz de carii profunde, traumatisme, fracturi dentare sau infecții vechi (abcese/granulome)." },
+      { title: "Rolul microscopului", text: "Permite detectarea detaliilor anatomice ascunse: canale suplimentare sau a instrumentelor fracturate, oferind o rată de succes maximă." },
+    ],
+    whyTitle: "De ce să alegi abordarea noastră?",
+    whyIntro: "Tehnologie avansată. Experiență. Grijă pentru tine.",
+    benefits: [
+      { title: "Vizibilitate maximă și precizie milimetrică", text: "Datorită microscopului operator." },
+      { title: "Confort absolut și fără durere", text: "Efectuate sub anestezie profundă." },
+      { title: "Salvarea dinților", text: "Care altfel ar trebui extrași." },
+      { title: "Sisteme rotative moderne și digă", text: "Pentru sterilizare perfectă." },
+      { title: "Mai puține ședințe", text: "Și disconfort post-operator redus." },
+      { title: "Experiență în cazuri complexe", text: "Retratamente endodontice." },
+    ],
+    stepsTitle: "Cum decurge un tratament de canal?",
+    stepsIntro: "4 pași clari pentru un rezultat sigur și durabil.",
     steps: [
-      {
-        title: "Diagnostic",
-        text: "Teste de vitalitate, percuție, radiografie periapicală.",
-      },
-      {
-        title: "Acces și izolare",
-        text: "Diga, deschidere conservatoare, localizarea canalelor.",
-      },
-      {
-        title: "Preparare și irigare",
-        text: "Lungime de lucru, instrumentare, dezinfecție abundentă.",
-      },
-      {
-        title: "Obturație și reconstrucție",
-        text: "Sigilarea canalelor și restaurarea dintelui (obturație sau coroană).",
-      },
+      { title: "Diagnostic & izolare", text: "Evaluare clinică, radiografie digitală și aplicarea digei dentare pentru izolare totală." },
+      { title: "Accesul & curățarea sub microscop", text: "Localizarea canalelor, îndepărtarea țesutului infectat și dezinfecție chimică." },
+      { title: "Obturația tridimensională", text: "Sigilarea ermetică a sistemului canalelor cu materiale biocompatibile." },
+      { title: "Restaurarea finală", text: "Refacerea coronară a dintelui prin plombă estetică sau coroană de protecție." },
+    ],
+    extraTitle: "Recomandări importante",
+    extraItems: [
+      { title: "Evită masticarea pe dintele tratat", text: "Temporar până la restaurarea finală." },
+      { title: "Este posibilă o sensibilitate coronară", text: "Și trecătoare în primele zile post-tratament." },
     ],
     pricing: [
-      { name: "Tratament de canal — monoradicular", price: "450–600 lei" },
-      { name: "Tratament de canal — premolar", price: "650–800 lei" },
-      { name: "Tratament de canal — molar", price: "850–1.100 lei" },
-      { name: "Retratament / dinte", price: "+200–350 lei" },
+      { name: "Consultație endodontică & diagnostic", price: "200–300 lei" },
+      { name: "Tratament de canal – Monoradicular (1 canal)", price: "600–900 lei" },
+      { name: "Tratament de canal – Pluriradicular (2–3 canale)", price: "900–1.400 lei" },
+      { name: "Retratament endodontic la microscop", price: "1.300–1.800 lei" },
+      { name: "Aplicare splint din fibră de sticlă", price: "400–700 lei" },
     ],
-    accent: "#b45309",
   },
   {
     slug: "radiologie",
     shortName: "3D / RX",
-    title: "Radiologie Dentară & Imagistică 3D",
-    tagline: "Diagnostic vizibil, doze mici, decizii clare",
-    heroKicker: "CBCT, panoramic și radiografii periapicale",
+    kicker: "Radiologie dentară & imagistică 3D",
+    title: "Radiologie Dentară Digitală",
+    subtitle: "Imagistică de înaltă precizie și iradiere minimă pentru un diagnostic corect.",
     description:
-      "Imagistică în clinică pentru planificare de implante, endodonție, chirurgie și ortodonție. Interpretare împreună cu medicul curant, nu doar un fișier pe stick.",
-    longDescription:
-      "Fără imagine bună, tratamentul e ghicitorie. Oferim radiografii retroalveolare, bitewing, panoramică și CBCT pe câmp mic sau mediu, în funcție de întrebarea clinică — nu „un 3D pentru toți”. Doza se ține jos prin colimare și protocoale pediatrice. Fișierele se pot exporta pentru colegi, iar pentru pacient explicăm pe ecran ce se vede, în limbaj simplu.",
-    benefits: [
-      {
-        title: "CBCT la cerere clinică",
-        text: "Câmp mic pentru un dinte sau implant, câmp mai larg pentru arcade.",
-      },
-      {
-        title: "Panoramic de screening",
-        text: "Vedere de ansamblu pentru molari incluși, sinusuri, articulații.",
-      },
-      {
-        title: "Endo și paro",
-        text: "Periapicale și bitewing pentru carii proximale și leziuni apicale.",
-      },
-      {
-        title: "Export digital",
-        text: "DICOM / JPEG pentru planificare ghidată și a doua opinie.",
-      },
+      "Beneficiază de tehnologie radiologică de ultimă generație. Oferim pe loc, rapid și în deplină siguranță: radiografii panoramice, retroalveolare și tomografii computerizate 3D (CBCT) esențiale pentru planurile de tratament.",
+    heroImage: "/heroes/radiologie.jpg",
+    heroAlt: "Aparat CBCT și imagini radiologice 3D",
+    highlights: [
+      { title: "CBCT 3D", text: "Planificare precisă." },
+      { title: "Panoramic", text: "Vedere de ansamblu." },
+      { title: "Doze mici", text: "Protocoale digitale." },
     ],
+    includeTitle: "Ce tipuri de investigații oferim?",
+    includes: [
+      { title: "Tomografie computerizată 3D (CBCT)", text: "Esențială pentru implantologie, chirurgie și endodonție avansată." },
+      { title: "Radiografie panoramică (ortopantomogramă)", text: "Imagine de ansamblu a întregului arcadă dentară și a structurilor adiacente." },
+      { title: "Radiografie retroalveolară (dentala localizată)", text: "Detalii milimetrice pentru un singur dinte sau un grup restrâns." },
+      { title: "Radiografie de bitewing", text: "Pentru detectarea timpurie a cariilor ocluzive în dinții dinți." },
+      { title: "Teleradiografie (profil/frontală)", text: "Indispensabilă pentru planificarea tratamentelor ortodontice." },
+    ],
+    whyTitle: "De ce să alegi serviciul nostru de radiologie?",
+    benefits: [
+      { title: "Doza de iradiere redusă", text: "Tehnologii senzorilor digitali ultramoderni." },
+      { title: "Rezultate instantanee", text: "Lămuri pe loc, digitale, pe e-mail sau pe suport dedicat." },
+      { title: "Claritate și precizie", text: "Chiar și în imagistică 3D." },
+      { title: "Confort absolut", text: "Investigații rapide, fără timp de așteptare." },
+      { title: "Echipamente calibrate", text: "Diagnostic conform normelor stricte de protecție radiologică." },
+      { title: "Totul într-un singur loc", text: "Posibilitatea realizării tuturor investigațiilor cu tratamentul." },
+    ],
+    stepsTitle: "Cum se desfășoară o investigație?",
     steps: [
-      {
-        title: "Indicația",
-        text: "Medicul alege tipul de imagine după întrebarea clinică, nu invers.",
-      },
-      {
-        title: "Achiziția",
-        text: "Poziționare, protecție, expunere scurtă, verificare calitate.",
-      },
-      {
-        title: "Interpretare",
-        text: "Citire pe loc, măsurători de os, canale, sinus, nerv.",
-      },
-      {
-        title: "Arhivare",
-        text: "Salvare în fișa pacientului și copiere pentru laborator sau ghid.",
-      },
+      { title: "Prezentarea în cabinet", text: "Personalul nostru medical îți va explica procedura investigației." },
+      { title: "Poziționarea rapidă și sigură", text: "Te poziționăm confortabil, conform necesităților zonei de interes, ținând cont de protecția de plumb." },
+      { title: "Livrarea rezultatelor", text: "Primești investigația procesată instant. Pe e-mail, digital, pe suport printat." },
+    ],
+    extraTitle: "Recomandări importante",
+    extraItems: [
+      { title: "Anunță medicul în caz de sarcină", text: "Pentru siguranța ta și a copilului tău." },
+      { title: "Îndepărtează obiectele metalice", text: "Din zona capului (ochelari, cercei, piercing-uri etc.)." },
     ],
     pricing: [
-      { name: "Radiografie retroalveolară", price: "50 lei" },
-      { name: "Radiografie panoramică", price: "120 lei" },
-      { name: "CBCT câmp mic (1–3 dinți)", price: "250 lei" },
-      { name: "CBCT maxilar sau mandibular", price: "350 lei" },
-      { name: "CBCT ambele arcade", price: "450 lei" },
+      { name: "Radiografie retroalveolară (dentală)", price: "60 lei" },
+      { name: "Radiografie panoramică (ortopantomogramă)", price: "150 lei" },
+      { name: "Tomografie 3D CBCT 1 os / segment (1/4 maxilar)", price: "250 lei" },
+      { name: "Teleradiografie de profil", price: "200 lei" },
+      { name: "Set diagnostic (panoramică + CBCT parțial)", price: "350 lei" },
     ],
-    accent: "#0f172a",
   },
 ];
 
 export function getService(slug: string) {
   return services.find((s) => s.slug === slug);
-}
-
-export function getServiceIndex(slug: string) {
-  return services.findIndex((s) => s.slug === slug);
 }

@@ -15,16 +15,15 @@ export const metadata: Metadata = {
     default: "DentalClinic Demo",
     template: "%s · DentalClinic Demo",
   },
-  description:
-    "Site demonstrativ pentru o clinică stomatologică: Fast & Fixed, implantologie, estetică, ortodonție și celelalte specialități.",
+  description: "Clinică stomatologică demo: Fast & Fixed, implantologie, estetică, ortodonție și imagistică 3D.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ro" className={`${outfit.variable} h-full antialiased`}>
-      <body className="min-h-full font-sans text-slate-900">
+      <body className="min-h-full font-sans">
         <Header />
-        <main className="flex-1 pt-4">{children}</main>
+        <main>{children}</main>
         <Footer />
         <ServiceDock />
       </body>

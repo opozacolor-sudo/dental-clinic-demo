@@ -2,17 +2,35 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/services";
+
+const COUNT = services.length;
+
+function startForIndex(index: number) {
+  return (index - 1 + COUNT) % COUNT;
+}
 
 export function ServiceDock() {
   const pathname = usePathname();
   const [start, setStart] = useState(0);
   const touchX = useRef<number | null>(null);
-  const visible = [0, 1, 2].map((offset) => services[(start + offset) % services.length]);
+
+  const visible = [0, 1, 2].map((offset) => services[(start + offset) % COUNT]);
+
+  const center = (index: number) => {
+    setStart(startForIndex(index));
+  };
+
+  useEffect(() => {
+    const slug = pathname.startsWith("/servicii/") ? pathname.split("/")[2] : null;
+    if (!slug) return;
+    const index = services.findIndex((s) => s.slug === slug);
+    if (index >= 0) center(index);
+  }, [pathname]);
 
   const shift = (dir: -1 | 1) => {
-    setStart((s) => (s + dir + services.length) % services.length);
+    setStart((s) => (s + dir + COUNT) % COUNT);
   };
 
   return (
@@ -42,14 +60,16 @@ export function ServiceDock() {
           }}
         >
           <div className="grid grid-cols-3 gap-1.5">
-            {visible.map((service) => {
+            {visible.map((service, slot) => {
               const href = `/servicii/${service.slug}`;
               const active = pathname === href;
+              const index = services.findIndex((s) => s.slug === service.slug);
               return (
                 <Link
-                  key={`${start}-${service.slug}`}
+                  key={`${start}-${service.slug}-${slot}`}
                   href={href}
-                  className={`truncate rounded-2xl px-2 py-3 text-center text-[11px] font-medium leading-tight sm:text-xs ${
+                  onClick={() => center(index)}
+                  className={`truncate rounded-2xl px-2 py-3 text-center text-[11px] font-medium leading-tight transition sm:text-xs ${
                     active ? "bg-[#2b7de9] text-white shadow" : "bg-white/70 text-[#0f2744] hover:bg-white"
                   }`}
                 >
